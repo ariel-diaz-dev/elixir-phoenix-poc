@@ -87,3 +87,22 @@
   text-decoration: none;
   cursor: pointer;
 }
+
+.invalid-feedback {
+  margin-top: 0px;
+  color: red;
+  text-transform: capitalize;
+  position: absolute;
+  top: 40px;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.collection-item{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
