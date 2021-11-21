@@ -9,6 +9,7 @@ defmodule DiscussWeb.Router do
     plug :protect_from_forgery
     plug :put_secure_browser_headers
     plug Ueberauth
+    plug Discuss.Plugs.SetUser
   end
 
   pipeline :api do
@@ -30,6 +31,7 @@ defmodule DiscussWeb.Router do
   scope "/auth", DiscussWeb do
     pipe_through :browser
 
+    get "/signout", SessionController, :signout
     get "/:provider", AuthController, :request
     get "/:provider/callback", AuthController, :callback
   end
