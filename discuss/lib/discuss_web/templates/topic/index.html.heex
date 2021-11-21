@@ -12,7 +12,7 @@
                 <%= link to: Routes.topic_path(@conn, :edit, topic), class: "btn btn-flat" do %>
                     <i class="material-icons">edit</i>
                 <% end %>
-                <%= link to: Routes.topic_path(@conn, :new), class: "btn red" do %>
+                <%= link to: Routes.topic_path(@conn, :delete, topic), method: :delete, class: "btn red" do %>
                     <i class="material-icons">delete</i>
                 <% end %>
             </div>
