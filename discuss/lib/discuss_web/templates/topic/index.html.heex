@@ -8,14 +8,16 @@
                 <%= topic.title %> 
             </span>
             <div class="spacer" />
-            <div>
-                <%= link to: Routes.topic_path(@conn, :edit, topic), class: "btn btn-flat" do %>
-                    <i class="material-icons">edit</i>
-                <% end %>
-                <%= link to: Routes.topic_path(@conn, :delete, topic), method: :delete, class: "btn red" do %>
-                    <i class="material-icons">delete</i>
-                <% end %>
-            </div>
+            <%= if @conn.assigns.user.id == topic.user_id do %>
+                <div>
+                    <%= link to: Routes.topic_path(@conn, :edit, topic), class: "btn btn-flat btn-small" do %>
+                        Edit
+                    <% end %>
+                    <%= link to: Routes.topic_path(@conn, :delete, topic), method: :delete, class: "btn btn-small btn-flat" do %>
+                        Delete
+                    <% end %>
+                </div>
+            <% end %>
         </li>
     <%end%>
 </ul>
