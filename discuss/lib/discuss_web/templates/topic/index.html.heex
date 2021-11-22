@@ -6,7 +6,7 @@
         <li class="collection-item"> 
             <%= link topic.title, to: Routes.topic_path(@conn, :show, topic) %>
             <div class="spacer" />
-            <%= if @conn.assigns.user.id == topic.user_id do %>
+            <%= if @conn.assigns.user != nil && (@conn.assigns.user.id == topic.user_id) do %>
                 <div>
                     <%= link to: Routes.topic_path(@conn, :edit, topic), class: "btn btn-flat btn-small" do %>
                         Edit
