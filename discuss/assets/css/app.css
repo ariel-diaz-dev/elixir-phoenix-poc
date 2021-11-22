@@ -101,6 +101,10 @@
   margin-bottom: 25px;
 }
 
+.collection{
+  width: 100%;
+}
+
 .collection-item{
   display: flex;
   flex-direction: row;
